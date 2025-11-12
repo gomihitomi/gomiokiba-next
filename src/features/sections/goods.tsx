@@ -1,8 +1,8 @@
 import Bubble from "@/components/bubble";
+import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { navigationItems } from "@/constants/navigation";
 import Image from "next/image";
-import Link from "next/link";
 
 const sectionItem = {
   id: navigationItems.GOODS.id,

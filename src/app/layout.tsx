@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="ごみおきば" />
+      </head>
       <body className={`${inter.variable} ${notoSansJp.variable} antialiased`}>
         {children}
       </body>

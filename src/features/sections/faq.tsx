@@ -113,10 +113,10 @@ const faqItems = [
     ),
   },
   {
-    question: "昔、ラジオやってませんでした？",
+    question: "ラジオやってませんでした？",
     answer: (
       <>
-        一時期、
+        少し前、
         <Link href="https://gomihitomi.github.io/yoidore/">
           吾味人美の酔いどれラジオ
         </Link>

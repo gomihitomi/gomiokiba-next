@@ -6,7 +6,14 @@ const profiles = [
   {
     tip: "まぁまぁ誤字されています。",
     label: "名前",
-    body: "吾味人美（ごみひとみ）",
+    body: (
+      <ruby>
+        吾味人美
+        <rp>(</rp>
+        <rt>ごみひとみ</rt>
+        <rp>)</rp>
+      </ruby>
+    ),
   },
   {
     tip: "芹沢●さひさんと完全に一緒です。",
@@ -72,7 +79,7 @@ const sectionItem = {
 
 export const Profile = () => (
   <Section {...sectionItem}>
-    <ul className="grid grid-cols-2 md:grid-cols-3 gap-2">
+    <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4">
       {profiles.map(({ tip, label, body }) => (
         <li key={label}>
           <div className="border border-foreground">

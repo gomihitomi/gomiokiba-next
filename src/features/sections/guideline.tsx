@@ -63,7 +63,7 @@ export const Guideline = () => {
             </ul>
           </div>
         </div>
-        <div className="text-sm font-bold text-red-600">
+        <div className="text-sm font-bold text-primary">
           ※当ガイドラインは予告なく変更する場合がありますので、予めご了承ください。
         </div>
       </div>

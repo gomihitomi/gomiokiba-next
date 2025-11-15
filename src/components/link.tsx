@@ -7,7 +7,7 @@ export const Link = ({ className, ...props }: LinkProps) => {
   return (
     <NextLink
       target="_blank"
-      className={`text-red-600 hover:text-red-500 hover:underline ${className}`}
+      className={`font-bold text-primary hover:text-primary-hover hover:underline ${className}`}
       {...props}
     />
   );

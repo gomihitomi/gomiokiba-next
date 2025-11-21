@@ -47,8 +47,8 @@ const faqItems = [
     answer: (
       <>
         吾味人美と同じ時間軸で生きているバーチャルインターネットラクガキマンです。
-        <Link href="https://gomihitomi.github.io/vwiki/">
-          バーチャルインターネットラクガキマンwiki
+        <Link href="https://gomipedia.vercel.app/">
+          Gomipedia
         </Link>
         を見ればちょっとだけ情報が載っているかも知れません。
       </>

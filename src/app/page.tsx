@@ -1,3 +1,4 @@
+import BackToTopButton from "@/components/back-to-top-button";
 import { Navigation } from "@/components/navigation";
 import { About } from "@/features/sections/about";
 import { Contact } from "@/features/sections/contact";
@@ -39,6 +40,7 @@ export default function Home() {
       <footer className="bg-foreground text-background w-full text-center text-sm py-8">
         © 2018-2025 ごみおきば
       </footer>
+      <BackToTopButton />
     </div>
   );
 }

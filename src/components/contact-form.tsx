@@ -5,7 +5,11 @@ import { useForm, ValidationError } from "@formspree/react";
 export function ContactForm() {
   const [state, handleSubmit] = useForm("mwpgqpyy");
   if (state.succeeded) {
-    return <p>お問い合わせが完了しました。</p>;
+    return (
+      <p className="font-bold border border-foreground px-2 py-4">
+        お問い合わせありがとうございます。いただいた内容は確認させていただきます！
+      </p>
+    );
   }
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">

@@ -9,5 +9,6 @@ export const navigationItems = {
   GOODS: { id: "goods", label: "グッズ" },
   GUIDELINE: { id: "guideline", label: "ガイドライン" },
   FAQ: { id: "faq", label: "よくある質問" },
+  CONTACT: { id: "contact", label: "お問い合わせ" },
   LINK: { id: "link", label: "リンク" },
 } as const satisfies Record<string, NavigationType>;

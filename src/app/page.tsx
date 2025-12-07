@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation";
 import { About } from "@/features/sections/about";
+import { Contact } from "@/features/sections/contact";
 import { Faq } from "@/features/sections/faq";
 import { Goods } from "@/features/sections/goods";
 import { Guideline } from "@/features/sections/guideline";
@@ -31,6 +32,7 @@ export default function Home() {
           <Goods />
           <Guideline />
           <Faq />
+          <Contact />
           <Links />
         </main>
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { navigationItems } from "@/constants/navigation";
-import Link from "next/link";
 import { useState } from "react";
 
 const navigation = [
@@ -10,6 +9,7 @@ const navigation = [
   navigationItems.GOODS,
   navigationItems.GUIDELINE,
   navigationItems.FAQ,
+  navigationItems.CONTACT,
   navigationItems.LINK,
 ];
 
@@ -27,12 +27,12 @@ export const Navigation = () => {
         <ul className="flex justify-around gap-px">
           {navigation.map((item) => (
             <li key={item.id} className="flex-1">
-              <Link
+              <a
                 className="text-sm py-2 w-full h-full flex justify-center items-center text-background bg-foreground hover:text-foreground hover:bg-background"
                 href={`#${item.id}`}
               >
                 {item.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -59,13 +59,13 @@ export const Navigation = () => {
             <ul className="flex flex-col items-center">
               {navigation.map((item) => (
                 <li key={item.id} className="w-full flex">
-                  <Link
+                  <a
                     className="text-center w-full text-2xl py-4 text-foreground hover:opacity-75"
                     href={`#${item.id}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

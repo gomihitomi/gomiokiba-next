@@ -18,6 +18,8 @@
   :root {
     --background: #212121;
     --foreground: #cfcfcf;
+    --primary: #ff4d4d;
+    --primary-hover: #d93636;
   }
 }
 

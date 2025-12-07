@@ -9,6 +9,9 @@ const sectionItem = {
 
 export const Contact = () => (
   <Section {...sectionItem}>
+    <p className="mb-2">
+      吾味人美に関するご意見・ご感想、お仕事に関する相談等がありましたら、こちらからどうぞ！
+    </p>
     <ContactForm />
   </Section>
 );

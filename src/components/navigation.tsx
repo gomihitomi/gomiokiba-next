@@ -23,12 +23,12 @@ export const Navigation = () => {
   return (
     <>
       {/* PC用メニュー */}
-      <nav className="hidden md:block">
-        <ul className="flex justify-around gap-px">
+      <nav className="hidden sticky z-50 top-0 md:block">
+        <ul className="flex gap-1 justify-around">
           {navigation.map((item) => (
             <li key={item.id} className="flex-1">
               <a
-                className="text-sm py-2 w-full h-full flex justify-center items-center text-background bg-foreground hover:text-foreground hover:bg-background"
+                className="text-sm py-2 w-full h-full flex  border border-foreground justify-center items-center text-background bg-foreground hover:text-foreground hover:bg-background"
                 href={`#${item.id}`}
               >
                 {item.label}
@@ -39,7 +39,7 @@ export const Navigation = () => {
       </nav>
 
       {/* モバイル用メニューボタン */}
-      <div className="md:hidden absolute top-0 right-0">
+      <div className="md:hidden fixed top-0 right-0">
         <button
           onClick={toggleMenu}
           className="z-100 cursor-pointer bg-foreground text-background px-6 py-4"

@@ -25,8 +25,8 @@ export default function Home() {
               priority
             />
           </Link>
-          <Navigation />
         </header>
+        <Navigation />
         <main>
           <About />
           <Profile />

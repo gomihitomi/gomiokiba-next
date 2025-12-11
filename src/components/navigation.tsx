@@ -1,6 +1,7 @@
 "use client";
 
 import { navigationItems } from "@/constants/navigation";
+import { useActiveSection } from "@/hooks/useActiveSection";
 import { useState } from "react";
 
 const navigation = [
@@ -20,29 +21,37 @@ export const Navigation = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const activeSection = useActiveSection(navigation.map(({ id }) => id));
+
   return (
     <>
       {/* PC用メニュー */}
       <nav className="hidden sticky z-50 top-0 md:block px-8 max-w-main-content mx-auto">
         <ul className="flex gap-2 justify-around">
-          {navigation.map((item) => (
-            <li key={item.id} className="flex-1">
-              <a
-                className="text-sm py-2 w-full h-full flex  border border-foreground justify-center items-center text-foreground bg-background hover:text-background hover:bg-foreground"
-                href={`#${item.id}`}
-              >
-                {item.label}
-              </a>
+          {navigation.map(({ id, label }) => (
+            <li key={id} className="flex-1">
+              {activeSection === id ? (
+                <span className="text-sm py-2 w-full h-full flex border border-background justify-center items-center text-background bg-foreground pointer-events-none">
+                  {label}
+                </span>
+              ) : (
+                <a
+                  className="text-sm py-2 w-full h-full flex border border-foreground justify-center items-center text-foreground bg-background hover:text-background hover:bg-foreground"
+                  href={`#${id}`}
+                >
+                  {label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
       </nav>
 
       {/* モバイル用メニューボタン */}
-      <div className="md:hidden fixed top-0 right-0">
+      <div className="md:hidden fixed top-0 right-0 z-25">
         <button
           onClick={toggleMenu}
-          className="z-100 cursor-pointer bg-foreground text-background px-6 py-4"
+          className="z-100 cursor-pointer bg-foreground text-background px-6 py-3"
           aria-label="メニューを開く"
         >
           {isMenuOpen ? "閉じる" : "メニュー"}

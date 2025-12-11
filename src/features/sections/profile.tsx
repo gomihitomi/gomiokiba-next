@@ -1,6 +1,9 @@
+"use client";
+
 import Bubble from "@/components/bubble";
 import { Section } from "@/components/section";
 import { navigationItems } from "@/constants/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const profiles = [
   {
@@ -36,7 +39,7 @@ const profiles = [
     body: "2018年10月18日",
   },
   {
-    tip: "常に移り変わるみたいな意味です。",
+    tip: "常に移り変わるという意味です。",
     label: "座右の銘",
     body: "星の流れ、月の位置",
   },
@@ -47,12 +50,12 @@ const profiles = [
   },
   {
     tip: "これを支えに生きています。",
-    label: "好きなもの",
-    body: "お酒（ウイスキー、ビール）",
+    label: "好き",
+    body: "お酒",
   },
   {
     tip: "ジャンプスケアを許すな。",
-    label: "苦手なもの",
+    label: "苦手",
     body: "ホラー（ビックリ系）",
   },
   {
@@ -77,24 +80,58 @@ const sectionItem = {
   title: navigationItems.PROFILE.label,
 };
 
-export const Profile = () => (
-  <Section {...sectionItem}>
-    <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4">
-      {profiles.map(({ tip, label, body }) => (
-        <li key={label}>
-          <div className="border border-foreground">
-            <div className="flex flex-col p-2 pb-0">
-              <span className="font-bold text-sm tracking-tighter">
+export const Profile = () => {
+  const [openLabel, setOpenLabel] = useState("");
+  const containerRef = useRef<HTMLUListElement>(null);
+
+  const toggleBubble = (label: string) => {
+    setOpenLabel(openLabel === label ? "" : label);
+  };
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      if (openLabel === "") return;
+
+      if (!containerRef.current.contains(e.target as Node)) {
+        setOpenLabel("");
+      }
+    };
+
+    window.addEventListener("click", handleClick);
+    return () => window.removeEventListener("click", handleClick);
+  }, [openLabel]);
+
+  return (
+    <Section {...sectionItem}>
+      <ul
+        ref={containerRef}
+        className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4"
+      >
+        {profiles.map(({ tip, label, body }) => (
+          <li
+            key={label}
+            className="relative cursor-pointer"
+            onClick={() => toggleBubble(label)}
+          >
+            {openLabel === label && (
+              <div className="text-sm absolute w-full -top-2">
+                <Bubble position="bottom" className="mx-auto">
+                  {tip}
+                </Bubble>
+              </div>
+            )}
+            <div className="flex flex-col">
+              <span className="font-bold text-sm tracking-tighter bg-foreground text-background py-1 px-2 w-fit">
                 {label}
               </span>
             </div>
-            <div className="text-sm bg-foreground text-background p-2 text-center">
+            <div className="flex justify-center items-center h-12 border border-foreground">
               <span>{body}</span>
             </div>
-          </div>
-          <Bubble className="text-sm mx-auto">{tip}</Bubble>
-        </li>
-      ))}
-    </ul>
-  </Section>
-);
+          </li>
+        ))}
+      </ul>
+    </Section>
+  );
+};

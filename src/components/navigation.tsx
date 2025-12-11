@@ -23,12 +23,12 @@ export const Navigation = () => {
   return (
     <>
       {/* PC用メニュー */}
-      <nav className="hidden sticky z-50 top-0 md:block">
-        <ul className="flex gap-1 justify-around">
+      <nav className="hidden sticky z-50 top-0 md:block px-8 max-w-main-content mx-auto">
+        <ul className="flex gap-2 justify-around">
           {navigation.map((item) => (
             <li key={item.id} className="flex-1">
               <a
-                className="text-sm py-2 w-full h-full flex  border border-foreground justify-center items-center text-background bg-foreground hover:text-foreground hover:bg-background"
+                className="text-sm py-2 w-full h-full flex  border border-foreground justify-center items-center text-foreground bg-background hover:text-background hover:bg-foreground"
                 href={`#${item.id}`}
               >
                 {item.label}

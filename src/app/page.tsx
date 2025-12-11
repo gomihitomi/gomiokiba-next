@@ -1,4 +1,5 @@
 import BackToTopButton from "@/components/back-to-top-button";
+import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { About } from "@/features/sections/about";
 import { Contact } from "@/features/sections/contact";
@@ -11,20 +12,11 @@ import { Profile } from "@/features/sections/profile";
 export default function Home() {
   return (
     <div>
-      <div className="w-full max-w-4xl mx-auto px-4 md:px-8 py-8">
-        <header>
-          <a href="">
-            <h1 className="w-fit font-black text-8xl tracking-tighter leading-none">
-              <div className="flex justify-around text-sm font-normal uppercase mb-2">
-                {"gomiokiba".split("").map((char, index) => (
-                  <span key={index}>{char}</span>
-                ))}
-              </div>
-              ごみおきば
-            </h1>
-          </a>
-        </header>
-        <Navigation />
+      <div className="pt-8 md:py-8">
+        <Header />
+      </div>
+      <Navigation />
+      <div className="w-full max-w-main-content mx-auto px-4 md:px-8">
         <main>
           <About />
           <Profile />

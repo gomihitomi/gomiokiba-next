@@ -5,6 +5,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
+  --spacing-main-content: theme(maxWidth.4xl);
 }
 
 :root {

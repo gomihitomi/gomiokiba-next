@@ -115,7 +115,7 @@ export const Profile = () => {
             onClick={() => toggleBubble(label)}
           >
             {openLabel === label && (
-              <div className="text-sm absolute w-full -top-2">
+              <div className="text-sm absolute w-full top-1">
                 <Bubble position="bottom" className="mx-auto">
                   {tip}
                 </Bubble>

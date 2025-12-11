@@ -7,24 +7,22 @@ import { Goods } from "@/features/sections/goods";
 import { Guideline } from "@/features/sections/guideline";
 import { Links } from "@/features/sections/links";
 import { Profile } from "@/features/sections/profile";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
       <div className="w-full max-w-4xl mx-auto px-4 md:px-8 py-8">
         <header>
-          <Link href="/">
-            <Image
-              className="mx-auto"
-              src="/img/gomihitomi/top.png"
-              alt="吾味人美のアイコン"
-              width={240}
-              height={240}
-              priority
-            />
-          </Link>
+          <a href="">
+            <h1 className="w-fit font-black text-8xl tracking-tighter leading-none">
+              <div className="flex justify-around text-sm font-normal uppercase mb-2">
+                {"gomiokiba".split("").map((char, index) => (
+                  <span key={index}>{char}</span>
+                ))}
+              </div>
+              ごみおきば
+            </h1>
+          </a>
         </header>
         <Navigation />
         <main>

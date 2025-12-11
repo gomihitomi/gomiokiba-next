@@ -12,7 +12,7 @@ import { Profile } from "@/features/sections/profile";
 export default function Home() {
   return (
     <div>
-      <div className="pt-8 md:py-8">
+      <div className="pt-16 md:py-8">
         <Header />
       </div>
       <Navigation />
@@ -27,7 +27,7 @@ export default function Home() {
           <Links />
         </main>
       </div>
-      <footer className="bg-foreground text-background w-full text-center text-sm py-8">
+      <footer className="mt-8 bg-foreground text-background w-full text-center text-sm py-8">
         © 2018-2025 ごみおきば
       </footer>
       <BackToTopButton />

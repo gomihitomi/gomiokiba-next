@@ -27,7 +27,38 @@ const ImageModal = ({ image, isOpen, onClose }: ImageModalProps) => {
   };
 
   const handleImageClick = (e: React.MouseEvent<HTMLImageElement>) => {
-    e.stopPropagation();
+    // 画像の描画領域を計算
+    const img = e.currentTarget;
+    const rect = img.getBoundingClientRect();
+    const clickX = e.nativeEvent.offsetX;
+    const clickY = e.nativeEvent.offsetY;
+
+    const naturalWidth = img.naturalWidth;
+    const naturalHeight = img.naturalHeight;
+    if (!naturalWidth || !naturalHeight) {
+      e.stopPropagation();
+      return;
+    }
+
+    // object‑contain が適用されたときのスケールと余白を計算
+    const scale = Math.min(
+      rect.width / naturalWidth,
+      rect.height / naturalHeight
+    );
+    const renderedWidth = naturalWidth * scale;
+    const renderedHeight = naturalHeight * scale;
+    const offsetX = (rect.width - renderedWidth) / 2;
+    const offsetY = (rect.height - renderedHeight) / 2;
+
+    // クリックが画像内部か判定し、画像内部の場合は閉じない
+    if (
+      clickX >= offsetX &&
+      clickX <= offsetX + renderedWidth &&
+      clickY >= offsetY &&
+      clickY <= offsetY + renderedHeight
+    ) {
+      e.stopPropagation();
+    }
   };
 
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import Bubble from "@/components/bubble";
-import ImageModal from "@/components/image-modal";
+import ImageModal, { ImageModalType } from "@/components/image-modal";
 import { Link } from "@/components/link";
 import { Paragraph } from "@/components/paragraph";
 import { Section } from "@/components/section";
@@ -16,19 +16,33 @@ const sectionItem = {
 
 type ModalState = {
   isOpen: boolean;
-  imageUrl: string;
+  image?: ImageModalType;
+};
+
+const IMAGES = {
+  design: {
+    src: "/img/gomihitomi/design.jpg",
+    alt: "吾味人美の設定画のモーダル画像",
+    width: 1800,
+    height: 2520,
+  },
+  design2: {
+    src: "/img/gomihitomi/design2.jpg",
+    alt: "吾味人美の新衣装の設定画のモーダル画像",
+    width: 2000,
+    height: 1679,
+  },
 };
 
 export const About = () => {
   const [modalState, setModalState] = useState<ModalState>({
     isOpen: false,
-    imageUrl: "",
   });
-  const openModal = (imageUrl: string) => {
-    setModalState({ isOpen: true, imageUrl });
+  const openModal = (image: ImageModalType) => {
+    setModalState({ isOpen: true, image });
   };
   const closeModal = () => {
-    setModalState({ isOpen: false, imageUrl: "" });
+    setModalState({ isOpen: false });
   };
 
   return (
@@ -56,7 +70,7 @@ export const About = () => {
           </Bubble>
           <div
             className="w-[200px] cursor-pointer grid items-center border border-foreground rounded-full aspect-square bg-white overflow-hidden hover:opacity-70"
-            onClick={() => openModal("/img/gomihitomi/design.jpg")}
+            onClick={() => openModal(IMAGES.design)}
           >
             <Image
               src="/img/gomihitomi/design.jpg"
@@ -78,7 +92,7 @@ export const About = () => {
           </Bubble>
           <div
             className="w-[200px] cursor-pointer grid items-center border border-foreground rounded-full aspect-square bg-white overflow-hidden hover:opacity-70"
-            onClick={() => openModal("/img/gomihitomi/design2.jpg")}
+            onClick={() => openModal(IMAGES.design2)}
           >
             <Image
               src="/img/gomihitomi/design2.jpg"
@@ -112,7 +126,7 @@ export const About = () => {
       </div>
       <ImageModal
         isOpen={modalState.isOpen}
-        imageUrl={modalState.imageUrl}
+        image={modalState.image}
         onClose={closeModal}
       />
     </Section>

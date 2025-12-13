@@ -47,9 +47,7 @@ const faqItems = [
     answer: (
       <>
         吾味人美と同じ時間軸で生きているバーチャルインターネットラクガキマンです。
-        <Link href="https://gomipedia.vercel.app/">
-          Gomipedia
-        </Link>
+        <Link href="https://gomipedia.vercel.app/">Gomipedia</Link>
         を見ればちょっとだけ情報が載っているかも知れません。
       </>
     ),
@@ -152,6 +150,12 @@ const faqItems = [
         <br />
         お酒を飲んで炎を吐け！
       </>
+    ),
+  },
+  {
+    question: "犬が走るゲームとか字幕が出るソフトのURLどこでしたっけ？",
+    answer: (
+      <>今このサイトでまとめられないか、作業中なので少しおまちください。</>
     ),
   },
 ];

@@ -30,7 +30,7 @@ const faqItems = [
               </Link>
             </li>
             <li>
-              生成AIを使用している：
+              生成AIを使用しているもの：
               <Link href="https://twitter.com/hashtag/AIごみあーと">
                 #AIごみあーと
               </Link>

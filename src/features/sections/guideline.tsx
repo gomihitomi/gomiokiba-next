@@ -28,20 +28,25 @@ export const Guideline = () => {
               </li>
               <ol className="list-disc list-outside pl-5">
                 <li>
-                  Twitter（現:X）に投稿する場合は
-                  <Link href="https://twitter.com/hashtag/%E3%81%94%E3%81%BF%E3%81%82%E3%83%BC%E3%81%A8">
-                    #ごみあーと
+                  吾味人美を対象に制作したファンアート・切り抜き動画などすべての二次創作が対象となります。
+                </li>
+                <li>
+                  制作・投稿時の詳細については
+                  <Link href="#fanart" target="">
+                    よくある質問
                   </Link>
-                  を付けてくれると助かります。
+                  をご参照ください。
                 </li>
               </ol>
               <li>
                 <b>吾味人美のコンテンツを二次使用すること</b>
               </li>
               <ol className="list-disc list-outside pl-5">
-                <li>吾味人美の創作物すべてが対象となります。</li>
                 <li>
-                  吾味人美以外の創作物であるファンアートなどは対象となりません。
+                  吾味人美の制作した絵・音楽・動画などすべての制作物が対象となります。
+                </li>
+                <li>
+                  ただし、吾味人美以外の著作物が含まれる二次創作・ファンアートなどは対象となりません。
                 </li>
               </ol>
             </ul>

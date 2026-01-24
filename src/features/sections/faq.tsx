@@ -6,15 +6,48 @@ import Image from "next/image";
 
 const faqItems = [
   {
-    question: "性的・暴力表現を含むファンアートを描いても大丈夫ですか？",
+    question: "ファンアートを制作・投稿する際に気をつけることはありますか？",
     answer: (
-      <>
-        好きに描いてください。R18の場合は
-        <Link href="https://twitter.com/hashtag/%E3%81%94%E3%81%BF%E3%81%88%E3%81%A1%E3%81%82%E3%83%BC%E3%81%A8?f=tweets&vertical=default&src=hash">
-          #ごみえちあーと
-        </Link>
-        を使ってください。R18絵を投稿して貰っても、いいねしかしないけれど許してネ。
-      </>
+      <span id="fanart">
+        二次創作・二次利用の内容に関してはガイドラインを守って頂ければ制限はありません。
+        <br />
+        Twitter（現:X）に投稿する際は利用者間でのトラブルを避ける為、下記を参考に投稿して頂けると幸いです。
+        <br />
+        <br />
+        <ul className="list-disc list-outside pl-5">
+          <li>ハッシュタグを付ける際は下記を参考にしてください。</li>
+          <ol>
+            <li>
+              絵・音楽・動画など：
+              <Link href="https://twitter.com/hashtag/ごみあーと">
+                #ごみあーと
+              </Link>
+            </li>
+            <li>
+              成人向け・NSFWな要素を含む：
+              <Link href="https://twitter.com/hashtag/ごみえちあーと">
+                #ごみえちあーと
+              </Link>
+            </li>
+            <li>
+              生成AIを使用している：
+              <Link href="https://twitter.com/hashtag/AIごみあーと">
+                #AIごみあーと
+              </Link>
+            </li>
+            <li>
+              その他、感想など：
+              <Link href="https://twitter.com/hashtag/吾味人美">#吾味人美</Link>
+            </li>
+          </ol>
+          <li>
+            一日に複数回投稿する場合は、
+            <b>スレッドや複数枚をまとめてのポスト</b>を推奨します。
+          </li>
+        </ul>
+        <br />
+        上記タグの有無問わず、吾味人美に関する投稿には出来るだけ目を通させて頂いてますが、すべての投稿に対して反応（RP・いいねなど）をお約束できないことを予めご承知おきください。
+      </span>
     ),
   },
   {
